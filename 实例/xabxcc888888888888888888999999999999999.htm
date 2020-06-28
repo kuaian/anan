@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+      
+
+
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+function add() {
+    var trObj = document.createElement("tr");
+    trObj.id = new Date().getTime();
+    trObj.innerHTML = "<td><input name='firstName'/></td><td><input name='lastName'/></td><td><input type='button' value='Add' onclick='add()'> <input type='button' value='Del' onclick='del(this)'></td>";
+    document.getElementById("tb").appendChild(trObj);
+}
+function del(obj) {
+    var trId = obj.parentNode.parentNode.id;
+    var trObj = document.getElementById(trId);
+    document.getElementById("tb").removeChild(trObj);
+}
+      
+      
+       
+     </script>
+       
+     
+     
+</head>
+
+
+<body>
+
+
+
+
+//代码描述：js新增，删除，input，table
+//利用js动态新增删除input属性标签
+
+
+
+
+     <table border="1">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td> </td>
+        </tr>
+        </thead><thead>
+            </thead><tbody id="tb">
+                <tr id="1st">
+                    <td>张</td>
+                    <td>三</td>
+                    <td><input type="button" value="Add" onclick="add()">
+                        <input type="button" value="Del" onclick="del(this)"></td>
+                </tr>
+            </tbody>
+</table>
+       
+       
+      </body>
+
+       
+      
+</html>
+​

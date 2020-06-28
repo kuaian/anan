@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+      <style>
+       
+      .Specifications {
+    margin-left:10%;
+    border:1px solid #A3C0E8;
+    width:75%;
+    height:auto;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.Specifications span {
+    margin-left:8%;
+}
+.addSpecification div {
+    text-align:center;
+}
+/*是否启用规格 添加*/
+.addSpecification input {
+    margin:1%;
+    padding:6px 12px;
+}
+.addSpecification button:nth-of-type(1) {
+    color:#fff;
+    background:#FF0000;
+    border-color:#FF0000;
+    padding:5px 10px;
+    border-radius:4px;
+}
+       
+       </style>
+
+
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+$(function() {
+    // 新增表单
+    var show_count = 20;
+    var count = 1;
+    $(".AddTr").click(function() {
+        var length = $(".tabInfo .tbody1>tr").length;
+        if (length < show_count) {
+            $(".model1 tbody .alonTr").clone().appendTo(".tabInfo .tbody1");
+        }
+    });
+    // 动态的新增内件
+    var show_count3 = 20;
+    var count3 = 1;
+    $(".tbody1").on("click", ".dtadd", function() {
+        var length = $(".neijian .tbody2 tr").length;
+        if (length < show_count3) {
+            $('.model2 tbody tr').clone().appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
+        }
+    });
+});
+function deltr(opp) {
+    var length = $(".tabInfo .tbody1>tr").length;
+    if (length <= 1) {
+        alert("至少保留一行");
+    } else {
+        $(opp).parent().parent().remove(); //移除当前行
+        
+      
+      }
+}
+      
+      
+       
+     </script>
+       
+     
+     
+</head>
+
+
+<body>
+
+
+      <div class="Specifications">
+    <span>产品规格</span>
+    <button type="button" id="btn2" class="saveGoods specification AddTr">
+                                            添加规格
+                                        </button>
+    <button type="button" class="saveGoods specification">
+                                            刷新表格
+                                        </button>
+    
+    <div class="wrapper">
+        
+        <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
+            <tbody>
+                <tr class="alonTr">
+                    <td>
+                        <input type="text">
+                        <a href="javascript:;" class="text_a" onclick="deltr(this)">删除该规格</a>
+                        <input type="text" placeholder="子规格名称">
+                        <a class="innerbtn" href="javascript:;">添加</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="itemInfo">
+            <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
+                <tbody class="tbody1">
+       
+       
+      </body>
+
+       
+      
+</html>
+​

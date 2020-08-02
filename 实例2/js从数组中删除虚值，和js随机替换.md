@@ -1,5 +1,9 @@
 07.26 15:53
+
+
 从数组中删除虚值，随机替换
+
+
 var mixedArr = [0, “blue”, “”, NaN, 9, true, undefined, “white”, false];
 var trueArr = mixedArr.filter(Boolean);
 console.log(trueArr); // returns [“blue”, 9, true, “white”]
@@ -28,13 +32,33 @@ var  y=Math.floor(Math.random()*33+1);
 document.getElementById(x).innerHTML=y; 
 
 
-11   php  数组里删除虚值
+11   php  数组里删除 键0
 
-php  数组也可以从数组里删除虚值，
 
-php  数组 定胆随机自动回收，都需要删除虚
 
-值0。
+<?php
+$array = array(0 => "a", 1 => "b", 2 => "c");
+unset($array[1]);
+           //↑ 你要删除的数组元素值的键
+print_r($array); //删除键0
+?>
+
+
+<?php
+$array = array(0 => "a", 1 => "b", 2 => "c");
+unset($array[0]);  //删除键0
+           //↑ 你要删除的数组元素值的键
+print_r($array);
+?>
+
+
+
+
+php  数组也可以从数组里删除键0，
+
+php  数组 定胆随机自动回收，都需要删除
+
+键0。
 
 
 

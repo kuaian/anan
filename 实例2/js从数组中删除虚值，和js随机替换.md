@@ -62,4 +62,28 @@ php  数组 定胆随机自动回收，都需要删除
 
 
 
+PHP中去除一个数组中的空元素方法
+
+array_filter (参数1，参数2);
+
+
+
+<?php
+
+
+$arr1=array("a" => 1,  "b" => 0,  "c" => 3,  "d" => "",  "e" => 5,"f"=>array());
+
+//执行
+
+$arr1=array_filter($arr1);
+
+
+
+print_r(array_filter($arr1));
+
+?>
+
+
+
+
 
